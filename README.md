@@ -46,8 +46,8 @@ Intentaremos cubrir de forma sencilla los siguientes puntos:
 │   └── /router.js              # Setup de rutas del API
 ├── /database/                  # El codigo de fuente de la base de datos
 │   ├── /seeds/                 # Contenido de la base de datos sin serializar
-│   ├── /Database.js            # Instancia y clase de la base de datos. Wrapper que permite usar promesas sobre los metodos de la libreria nedb.
-│   └── /docTypes.js            # "Constantes" que definen los tipos de documentos almacenados en la base de datos
+│   ├── /database.js            # Instancia y clase de la base de datos. Wrapper que permite usar promesas sobre los metodos de la libreria nedb.
+│   └── /doctypes.js            # "Constantes" que definen los tipos de documentos almacenados en la base de datos
 ├── /node_modules/              # Dependencias instaladas por npm
 ├── /scripts/                   # Scripts expuestos por linea de comando
 │   ├── /dbdrop.js              # Script para eliminar el contenido de la base de datos
@@ -61,7 +61,7 @@ Intentaremos cubrir de forma sencilla los siguientes puntos:
 ##### Descripcion y modo de uso
 La DB utilizada en el proyecto es persistida en un archivo local en el disco ubicado en ``/database/worshop.db``. Esta construida 100% con Javascript y no tiene dependencias con ningun motor externo (como MySQL o MongoDB).
 
-Para acceder a ella se utiliza la clase ``Database`` presente en el archivo ``/database/Database.js``.
+Para acceder a ella se utiliza la clase ``Database`` presente en el archivo ``/database/database.js``.
 
 Esta clase funciona como un wrapper de la libreria [nedb](https://github.com/louischatriot/nedb) y le suma la posibilidad de trabajar con promises para facilitar su uso.
 
