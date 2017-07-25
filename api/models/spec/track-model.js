@@ -7,7 +7,7 @@ import {trackModel} from '../track-model';
 
 describe(`The Track Model`, () => {
     describe(`getList method`, () => {
-        it(`should call getListFiltered with no arguments`, () => {
+        it.only(`should call getListFiltered with no arguments`, () => {
             spyOn(trackModel, 'getListFiltered');
             trackModel.getList();
             expect(trackModel.getListFiltered).toHaveBeenCalled();

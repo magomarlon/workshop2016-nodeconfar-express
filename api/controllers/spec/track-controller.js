@@ -1,6 +1,11 @@
 import {trackModel} from '../../models';
 import {trackController} from '../track-controller';
 
+const video = {
+	play() {
+		return true;
+	},
+};
 
 
 describe(`The Track Controller`, () => {
@@ -10,8 +15,19 @@ describe(`The Track Controller`, () => {
     let spyRes;
 
     beforeEach(() => {
-        spyReq = jasmine.createSpyObj('req', [{params: 'id'}]);
-        spyRes = jasmine.createSpyObj('res', ['json']);
+	    const spy = jest.spyOn(video, 'play');
+	    const isPlaying = video.play();
+
+	    expect(spy).toHaveBeenCalled();
+	    expect(isPlaying).toBe(true);
+	    spyReq = jasmine.createSpyObject('req',  'id');
+	    spy.mockReset();
+	    console.log(spyReq);
+
+	    spy.mockRestore();
+	    /*spyReq = jest.spyOn('req',  [{params: 'id'}]);
+        spyRes = jest.spyOn('res', ['json']);*/
+
     });
 
 
